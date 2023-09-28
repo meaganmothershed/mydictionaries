@@ -177,7 +177,7 @@ print()
 print('*****  end section 8 ********')
 print()
 
-'''
+
 
 print()
 print('*****  start section 9 - using random and converting to list ********')
@@ -196,9 +196,10 @@ print(phonebook[random.choice(list(phonebook))])
 print()
 print('*****  end section 9 ********')
 print()
+'''
 
-
-
+mydictionary = dict(m=8, n=9)
+print(mydictionary)
 
 
 

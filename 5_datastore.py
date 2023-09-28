@@ -18,7 +18,7 @@ room-number,use,sq-ft,price
 
 
 
-datastore = { "medical":[
+datastore = { "medical":[ # medical is the only key in datastore, value of the key in medical is a list of dictionaries
       { "room-number": 100,
         "use": "reception",
         "sq-ft": 50,
@@ -47,3 +47,23 @@ datastore = { "medical":[
 
       ]
 }
+
+outfile = open('retail_sapce.csv','w')
+outfile.write('room-number,use,sq-ft,price\n')
+
+list_of_dictionaries = datastore['medical']
+
+for dictionary in list_of_dictionaries:
+# for dictionary in datastore['medical']:
+    
+    room = dictionary['room-number']
+    use = dictionary['use']
+    sqft = dictionary['sq-ft']
+    price = dictionary['price']
+
+    outfile.write(f"{room},{use},{sqft},{price}\n")
+
+    #preferred without variables
+    # outfile.write(f"{dictionary['room-number']},{dictionary['use']},{dictionary['sq-ft']},{dictionary['price']}\n")
+
+outfile.close()
